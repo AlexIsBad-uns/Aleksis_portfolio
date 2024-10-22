@@ -2,6 +2,8 @@ from flask import Flask, render_template ,request
 import time
 import smtplib
 import os
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
 
 def mail(email, pssd, mssg):
@@ -22,21 +24,22 @@ def home_page():
 
 
 def cleanMsg(data):
-    name= data.get('name')
-    email= data.get('email')
-    msg=data.get('message')
-    message = f"""From: {name} <{email}>
-Subject: New Message On Our Official Website
-{msg}
-"""
+    name = data.get('name')
+    email = data.get('email')
+    msg = data.get('message')
+    message = f"""
+        From: {name} <{email}>
+        Subject: New Message On Our Official Website
+        {msg}
+    """
     return message
 
 @app.route('/submit_form',methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
         data = request.form.to_dict()
-        msg=cleanMsg(data)
-        password=os.environ.get('EMAIL_PASS')
+        msg = cleanMsg(data)
+        password = password = os.environ.get('EMAIL_PASS')
         mail('badunsaleksis@gmail.com', password, msg)
         return render_template("index.html",code="test()")
     else:
