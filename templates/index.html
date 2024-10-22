@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Aleksis Baduns</title>
+	<title>AleksisBPortfolio</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="../static/animate.css">
 	<link rel="stylesheet" href="../static/flexslider.css">
 	<link rel="stylesheet" href="../static/fonts/icomoon/style.css">
 
-	<link href="../static/assets/favicon.ico" rel="icon">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link href="../static/assets/cats.ico" rel="icon">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='cats.ico') }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../static/bootstrap.css">
 	<link rel="stylesheet" href="../static/style.css">
@@ -17,6 +17,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="https://www.google.com/recaptcha/enterprise.js?render=6LeRnGgqAAAAAHbBOfD0-mub-IaGb7zPBGWJXijf"></script>
+	<!-- Replace the variables below. -->
+	<script>
+		function onSubmit(token) {
+		document.getElementById("site-form").submit();
+		}
+	</script>
 
 
 <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
@@ -44,7 +51,7 @@
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link" href="#section-home">Sākums</a></li>
 					<li class="nav-item"><a class="nav-link" href="#section-portfolio">Portfolio</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-resume">Resume</a></li>
+					<li class="nav-item"><a class="nav-link" href="#section-resume">Rezumē</a></li>
 					<li class="nav-item"><a class="nav-link" href="#section-about">Par mani</a></li>
 					<li class="nav-item"><a class="nav-link" href="#section-contact">Kontakti</a></li>
 				</ul>
@@ -181,82 +188,68 @@
 			<div class="filters">
 				<ul>
 					<li class="active" data-filter="*">Viss</li>
-					<li data-filter=".typography">Python Projekti</li>
-					<li data-filter=".photography">Dizains</li>
+					<li data-filter=".pyproj">Python Projekti</li>
+					<li data-filter=".design">Dizains</li>
+					<li data-filter=".food">Ēdināšana</li>
 				</ul>
 			</div>
 
 			<div class="filters-content">
 				<div class="row grid">
-					<div class="single-portfolio col-sm-4 all packaging">
+					<div class="single-portfolio col-sm-4 all pyproj">
 						<div class="relative">
 							<div class="thumb">
 								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="../static/assets/images/p4.jpg" alt="">
+								<img class="image img-fluid" src="../static/assets/images/gameoflifescreenshot.jpg" alt="">
 							</div>
-							<a href="../static/assets/images/p4.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="../static/assets/images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div> 
-						<div class="p-inner">
-							<h4>Food Review Prediction</h4>
-							<div class="cat">Natural Language Processing</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="../static/assets/images/p5.jpg" alt="">
-							</div>
-							<a href="../static/assets/images/p5.jpg" class="img-pop-up">  
+							<a href="../static/assets/images/gameoflifescreenshot.jpg" class="img-pop-up">  
 								<div class="middle">
 									<div class="text align-self-center d-flex"><img src="../static/assets/images/preview.png" alt=""></div>
 								</div>
 							</a>                                
 						</div>
 						<div class="p-inner">
-							<h4>Blockchain</h4>
-							<div class="cat">Cryptocurrency</div>
+							<a href="https://github.com/AlexIsBad-uns" target="_blank">
+							<h4>Game of life</h4>
+							<div class="cat">Python game</div>
+						</a>
 						</div>
 					</div>
-					<div class="single-portfolio col-sm-4 all photography">
+					<div class="single-portfolio col-sm-4 all design">
 						<div class="relative">
 							<div class="thumb">
 								<div class="overlay overlay-bg"></div>
 								<img class="image img-fluid" src="../static/assets/images/siermaizes_proj2.jpg" alt="">
 							</div>
-							<a href="../static/assets/images/p6.jpg" class="img-pop-up">  
+							<a href="../static/assets/images/siermaizes_proj2.jpg" class="img-pop-up">  
 								<div class="middle">
 									<div class="text align-self-center d-flex"><img src="../static/assets/images/preview.png" alt=""></div>
 								</div>
 							</a>                                
 						</div>
 						<div class="p-inner">
-							<a href="https://www.youtube.com/cybercreed" target="_blank">
+							<a href="../static/assets/images/siermaizes_krekls.jpg" target="_blank">
 							<h4>Siermaizes projekts</h4>
 							<div class="cat">Krekla apdruka</div>
 						</a>
 						</div>
 					</div>
-					<div class="single-portfolio col-sm-4 all photography">
+					<div class="single-portfolio col-sm-4 all food">
 						<div class="relative">
 							<div class="thumb">
 								<div class="overlay overlay-bg"></div>
 								<img class="image img-fluid" src="../static/assets/images/SOMETIMES.png" alt="">
 							</div>
-							<a href="../static/assets/images/p6.jpg" class="img-pop-up">  
+							<a href="../static/assets/images/SOMETIMES.png" class="img-pop-up">  
 								<div class="middle">
 									<div class="text align-self-center d-flex"><img src="../static/assets/images/preview.png" alt=""></div>
 								</div>
 							</a>                                
 						</div>
 						<div class="p-inner">
-							<a href="https://www.youtube.com/cybercreed" target="_blank">
+							<a href="#" target="_blank">
 							<h4>Sometimes</h4>
-							<div class="cat">Ēdnīcas logo dizains</div>
+							<div class="cat">Ēdiena pagatavošana</div>
 						</a>
 						</div>
 					</div>
@@ -272,7 +265,7 @@
 			<div class="row">
 				<div class="col-md-12 mb-5">
 					<div class="section-heading text-center">
-						<h2>Mans <strong>Resume</strong></h2>
+						<h2>Mans <strong>Rezumē</strong></h2>
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -375,8 +368,8 @@
 							<span class="icon-browser2"></span>
 						</span>
 						<h3 class="mb-4">Python programmas</h3>
-						<p>...</p>
-						<p><a href="#" class="site-link">Info <i class="icon-chevron-right"></i></a></p>
+						<p>Programmēju programmas, spēles, mājaslapas Python programmēšanas valodā.</p>
+						<p><a href="https://github.com/AlexIsBad-uns" class="site-link">Info <i class="icon-chevron-right"></i></a></p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 text-center mb-5">
@@ -385,8 +378,8 @@
 							<span class="icon-presentation"></span>
 						</span>
 						<h3 class="mb-4">Dizains</h3>
-						<p>...</p>
-						<p><a href="#" class="site-link">Info <i class="icon-chevron-right"></i></a></p>
+						<p>Dizainēju kreklu apdrukas, logo dizainus un arī digitālo mākslu. Piedāvāju dizainēt pēc pasūtījuma.</p>
+						<p><a href="#section-portfolio" class="site-link">Info <i class="icon-chevron-right"></i></a></p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 text-center mb-5">
@@ -396,7 +389,7 @@
 						</span>
 						<h3 class="mb-4">Ēdiena gatavošana</h3>
 						<p>Gatavoju gardas pusdienu maltītes saviem klasesbiedriem par labu cenu. Varu piedāvāt savus pakalpojumus arī citiem. </p>
-						<p><a href="#" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+						<p><a href="#section-portfolio" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
 					</div>
 				</div>
 
@@ -427,7 +420,7 @@
 							<textarea name="message" class="form-control px-3 py-4"cols="30" rows="10" placeholder="Write a Message"></textarea>
 						</div>
 						<div class="form-group">
-							<input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message">
+							<button type="submit" class="g-recaptcha btn btn-primary px-4 py-3" data-sitekey="6Lde3GgqAAAAALQKwb1Ng7Nhk1uP-ICoNVuFnLR6" data-callback='onSubmit'data-action='submit' value="Send Message">Sūtīt</button>
 						</div>
 					</form>
 					<script>
