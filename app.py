@@ -39,7 +39,7 @@ def form():
     if request.method == 'POST':
         data = request.form.to_dict()
         msg = cleanMsg(data)
-        password = password = os.environ.get('EMAIL_PASS')
+        password = os.environ.get('EMAIL_PASS')
         mail('badunsaleksis@gmail.com', password, msg)
         return render_template("index.html",code="test()")
     else:
