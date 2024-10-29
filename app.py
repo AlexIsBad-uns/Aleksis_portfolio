@@ -18,7 +18,7 @@ def mail(email, pssd, mssg):
     msg = MIMEText(mssg, 'plain', 'utf-16')
     msg['From'] = email
     msg['To'] = 'badunsaleksis@gmail.com'
-    msg['Subject'] = "Jauna zina no Portfolio majaslapas"
+    msg['Subject'] = "Jauna ziņa no Portfolio mājaslapas"
     
     server.sendmail(email, 'badunsaleksis@gmail.com', msg.as_string())
     server.quit()
