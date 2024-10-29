@@ -29,18 +29,19 @@ def mail(email, pssd, mssg):
 def home_page():
     return render_template("index.html")
 
-
+# ziņas izveide
 def cleanMsg(data):
     name = data.get('name')
     email = data.get('email')
     msg = data.get('message')
     message = f"""
         From: {name} <{email}>
-        Subject: Jauna zina no Portfolio majaslapas
+        Subject: Jauna ziņa no Portfolio mājaslapas
         {msg}
     """
     return message
 
+# ielogošanās
 @app.route('/submit_form',methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
